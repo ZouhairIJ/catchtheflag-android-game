@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="viewModel" type="de.hsfl.team46.campusflag.viewmodels.ViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_background"
+        tools:context=".StartFragment">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="176dp"
+            android:layout_marginBottom="20dp"
+            android:text="CatchTheFlage Game"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#DA32302C"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/host_btn_start"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/host_btn_start"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="#8C9EFF"
+            android:text="Host Game"
+            android:textColor="#454040"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.449" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="128dp"
+            android:layout_height="113dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/startpagelogo" />
+
+        <Button
+            android:id="@+id/join_btn_start"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="-100dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="#B9F6CA"
+            android:text="Join Game"
+            android:textColor="#2C2929"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/host_btn_start" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

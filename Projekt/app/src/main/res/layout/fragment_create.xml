@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="viewModel" type="de.hsfl.team46.campusflag.viewmodels.ViewModel" />
+    </data>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/frameLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_background"
+            android:paddingTop="50dp"
+            tools:context=".CreateFragment">
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:afterTextChanged="@{viewModel::setHostName}"
+                android:ems="10"
+                android:fontFamily="sans-serif"
+                android:freezesText="false"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:singleLine="false"
+                android:text="@{viewModel.hostName}"
+                android:textAllCaps="false"
+                android:textColor="#605959"
+                android:textColorHint="#000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setflagposition_btn_create" />
+
+            <Button
+                android:id="@+id/setflagposition_btn_create"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#FAD103"
+                android:text="Set Flag at Position"
+                android:textColor="#494343"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/creategame_btn_create"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:backgroundTint="#7FCD6A"
+                android:text="Create Game"
+                app:layout_constraintEnd_toStartOf="@+id/cancelBtn"
+                app:layout_constraintHorizontal_bias="0.146"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+            <Button
+                android:id="@+id/cancelBtn"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="32dp"
+                android:backgroundTint="#FF8A80"
+                android:text="Cancel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+            <de.hsfl.team46.campusflag.custom.CustomMapViewCreate
+                android:id="@+id/karte_campus_create"
+                android:layout_width="331dp"
+                android:layout_height="203dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="15dp"
+                android:adjustViewBounds="true"
+                android:cropToPadding="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/creategame_btn_create"
+                app:layout_constraintVertical_bias="0.224" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
